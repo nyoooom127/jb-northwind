@@ -1,6 +1,11 @@
 import "./Home.css";
 import produceImage from '../../../Assets/Images/produce.png';
 import snacksImage from '../../../Assets/Images/snacks.jpg';
+import beveragesImage from '../../../Assets/Images/beverages.jpg';
+import candiesImage from '../../../Assets/Images/candies.jpg';
+import cheeseImage from '../../../Assets/Images/cheese.jpg';
+import fishAndChipsImage from '../../../Assets/Images/fishAndChips.jpeg';
+import fruitsImage from '../../../Assets/Images/fruits.jpg';
 
 function Home(): JSX.Element {
     // const imageNumber = Math.floor(Math.random() * 2) + 1;
@@ -15,6 +20,14 @@ function Home(): JSX.Element {
         { id: 4, name: "Cookie", price: 10.5 },
         { id: 5, name: "Cupcake", price: 11.9 },
     ];
+
+    const products = [
+        {id: 1, img: fruitsImage, title: 'Fruits'},
+        {id: 2, img: beveragesImage, title: 'Beverages'},
+        {id: 3, img: candiesImage, title: 'Candies'},
+        {id: 4, img: cheeseImage, title: 'Cheese'},
+        {id: 5, img: fishAndChipsImage, title: 'Fish & Chips'},
+    ]
 
     return (
         <div className="Home">
@@ -31,7 +44,16 @@ function Home(): JSX.Element {
             )}
             <div className="desserts">
                 {desserts.map(d => (
-                    <span key={d.id}>🤍{d.name}, price:{d.price}</span>
+                    <span key={d.id}>🤍 {d.name}, price:{d.price}</span>
+                ))}
+            </div>
+
+            <div className="Products">
+                {products.map(p => (
+                    <div key={p.id} className="Product">
+                        <img src={p.img}/>
+                        <p>{p.title}</p>
+                    </div>
                 ))}
             </div>
         </div>

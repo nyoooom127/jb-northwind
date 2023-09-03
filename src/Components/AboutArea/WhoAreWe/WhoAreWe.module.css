@@ -1,0 +1,20 @@
+.Container {
+    display: inline-block;
+    border: 1px solid;
+    margin: 10px;
+    padding: 10px;
+}
+
+.NiceText {
+    color: lightpink;
+    /* background-color: darkseagreen; */
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.OpenHours {
+    color: lightcoral;
+    /* background-color: darkseagreen; */
+    font-weight: bold;
+    font-size: xx-large;
+}

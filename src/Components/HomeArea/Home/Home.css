@@ -6,7 +6,7 @@
     justify-content: center;
 }
 
-.Home > img {
+.Home img {
     height: 300px;
     width: 400px;
     border: 1px solid;
@@ -17,15 +17,38 @@
     font-size: large;
 }
 
-.Home > .desserts {
+.Home > .Desserts {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: start;
     justify-content: center;
     gap: 10px;
+    width: 100%;
+    padding-left: 50px;
+    box-sizing: border-box;
 }
 
-.Home > .desserts > span {
+.Home > .Desserts span {
     font-size: larger;
+}
+
+.Home > .Products {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.Home .Product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* gap: 10px; */
+}
+
+.Home .Product img {
+    height: 200px;
+    width: 300px;
+    border: 1px solid;
+    margin: 20px;
 }
 
