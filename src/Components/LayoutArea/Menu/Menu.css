@@ -10,3 +10,8 @@
 .Menu > a {
     font-size: x-large;
 }
+
+.Menu > .active {
+    color: darkcyan;
+    font-weight: bold;
+}
