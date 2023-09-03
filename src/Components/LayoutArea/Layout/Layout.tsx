@@ -1,13 +1,24 @@
+import Home from "../../HomeArea/Home/Home";
+import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
+import Menu from "../Menu/Menu";
 import "./Layout.css";
 
 function Layout(): JSX.Element {
     return (
         <div className="Layout">
-            <header><Header /></header>
-            <aside>2</aside>
-            <main>3</main>
-            <footer>4</footer>
+            <header>
+                <Header />
+            </header>
+            <aside>
+                <Menu />
+            </aside>
+            <main>
+                <Home />
+            </main>
+            <footer>
+                <Footer />
+            </footer>
         </div>
     );
 }
