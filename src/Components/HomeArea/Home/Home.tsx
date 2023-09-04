@@ -7,6 +7,7 @@ import cheeseImage from '../../../Assets/Images/cheese.jpg';
 import fishAndChipsImage from '../../../Assets/Images/fishAndChips.jpeg';
 import fruitsImage from '../../../Assets/Images/fruits.jpg';
 import Products from "../Products/Products";
+import Search from "../Search/Search";
 
 function Home(): JSX.Element {
     // const imageNumber = Math.floor(Math.random() * 2) + 1;
@@ -32,6 +33,7 @@ function Home(): JSX.Element {
 
     return (
         <div className="Home">
+            <Search/>
             {isWeekEnd ? (
                 <div>
                     <img src={produceImage} />
