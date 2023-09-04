@@ -1,0 +1,19 @@
+.Products {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.Products > .Product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* gap: 10px; */
+}
+
+.Products > .Product img {
+    height: 200px;
+    width: 300px;
+    border: 1px solid;
+    margin: 20px;
+}

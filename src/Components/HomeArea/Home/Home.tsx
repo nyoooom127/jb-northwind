@@ -6,6 +6,7 @@ import candiesImage from '../../../Assets/Images/candies.jpg';
 import cheeseImage from '../../../Assets/Images/cheese.jpg';
 import fishAndChipsImage from '../../../Assets/Images/fishAndChips.jpeg';
 import fruitsImage from '../../../Assets/Images/fruits.jpg';
+import Products from "../Products/Products";
 
 function Home(): JSX.Element {
     // const imageNumber = Math.floor(Math.random() * 2) + 1;
@@ -47,15 +48,15 @@ function Home(): JSX.Element {
                     <span key={d.id}>🤍 {d.name}, price:{d.price}</span>
                 ))}
             </div>
-
-            <div className="Products">
+<Products/>
+            {/* <div className="Products">
                 {products.map(p => (
                     <div key={p.id} className="Product">
                         <img src={p.img}/>
                         <p>{p.title}</p>
                     </div>
                 ))}
-            </div>
+            </div> */}
         </div>
     );
 }
