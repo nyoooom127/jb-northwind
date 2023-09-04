@@ -1,0 +1,18 @@
+.EmployeeList img {
+	height: 150px;
+	width: 150px;
+}
+
+.EmployeeList tr {
+    padding: 5px;
+    border: 1px solid;
+}
+
+.EmployeeList, .EmployeeList th, .EmployeeList td {
+    border: 1px solid;
+}
+
+.EmployeeList {
+    margin-left: 20rem;
+    background-color: rgb(0, 0, 0, 0.07);
+}

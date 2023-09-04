@@ -12,7 +12,7 @@ function ProductList(): JSX.Element {
             console.log(products);
             setAllProducts(products);
         }).catch(err => alert(err.message))
-    })
+    }, [])
     return (
         <div className="ProductList">
             {allProducts.map(product => (

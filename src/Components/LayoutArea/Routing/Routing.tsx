@@ -6,6 +6,7 @@ import About from "../../AboutArea/About/About";
 import Page404 from "../Page404/Page404";
 import ContactUs from "../../AboutArea/ContactUs/ContactUs";
 import ProductDetails from "../../ProductsArea/ProductDetails/ProductDetails";
+import EmployeeList from "../../EmployeeArea/EmployeeList/EmployeeList";
 
 function Routing(): JSX.Element {
     return (
@@ -14,6 +15,7 @@ function Routing(): JSX.Element {
                 <Route path="/home" element={<Home />} />
                 <Route path="/products" element={<ProductList />} />
                 <Route path="/products/details/:id" element={<ProductDetails />} />
+                <Route path="/employees" element={<EmployeeList />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contactUs" element={<ContactUs />} />
                 <Route path="/" element={<Navigate to="/home" />} />
