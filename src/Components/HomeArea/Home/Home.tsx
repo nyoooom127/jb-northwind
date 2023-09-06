@@ -6,6 +6,7 @@ import fruitsImage from '../../../Assets/Images/fruits.jpg';
 import produceImage from '../../../Assets/Images/produce.png';
 import snacksImage from '../../../Assets/Images/snacks.jpg';
 import useTitle from "../../../Utils/UseTitle";
+import Orders from '../../SharedArea/Orders/Orders';
 import Products from "../Products/Products";
 import Search from "../Search/Search";
 import "./Home.css";
@@ -53,6 +54,7 @@ function Home(): JSX.Element {
                     <span key={d.id}>🤍 {d.name}, price:{d.price}</span>
                 ))}
             </div>
+            <Orders/>
             <Products />
             {/* <div className="Products">
                 {products.map(p => (
