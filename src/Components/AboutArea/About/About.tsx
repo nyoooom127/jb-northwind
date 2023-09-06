@@ -1,11 +1,14 @@
-import { SyntheticEvent, useState, useEffect } from 'react';
+import { SyntheticEvent, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import WhoAreWe from "../WhoAreWe/WhoAreWe";
-import "./About.css";
+import useTitle from '../../../Utils/UseTitle';
 import RandomImage from '../RandomImage/RandomImage';
 import Tune from '../Tune/Tune';
+import WhoAreWe from "../WhoAreWe/WhoAreWe";
+import "./About.css";
 
 function About(): JSX.Element {
+    useTitle('About');
+
     const [currDate, setCurrDate] = useState("");
     function showDate(): void {
         const now = new Date();

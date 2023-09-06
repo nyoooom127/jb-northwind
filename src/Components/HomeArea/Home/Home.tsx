@@ -1,15 +1,18 @@
-import "./Home.css";
-import produceImage from '../../../Assets/Images/produce.png';
-import snacksImage from '../../../Assets/Images/snacks.jpg';
 import beveragesImage from '../../../Assets/Images/beverages.jpg';
 import candiesImage from '../../../Assets/Images/candies.jpg';
 import cheeseImage from '../../../Assets/Images/cheese.jpg';
 import fishAndChipsImage from '../../../Assets/Images/fishAndChips.jpeg';
 import fruitsImage from '../../../Assets/Images/fruits.jpg';
+import produceImage from '../../../Assets/Images/produce.png';
+import snacksImage from '../../../Assets/Images/snacks.jpg';
+import useTitle from "../../../Utils/UseTitle";
 import Products from "../Products/Products";
 import Search from "../Search/Search";
+import "./Home.css";
 
 function Home(): JSX.Element {
+    useTitle('Home');
+
     // const imageNumber = Math.floor(Math.random() * 2) + 1;
     const now = new Date();
     const day = now.getDay();
@@ -24,16 +27,16 @@ function Home(): JSX.Element {
     ];
 
     const products = [
-        {id: 1, img: fruitsImage, title: 'Fruits'},
-        {id: 2, img: beveragesImage, title: 'Beverages'},
-        {id: 3, img: candiesImage, title: 'Candies'},
-        {id: 4, img: cheeseImage, title: 'Cheese'},
-        {id: 5, img: fishAndChipsImage, title: 'Fish & Chips'},
+        { id: 1, img: fruitsImage, title: 'Fruits' },
+        { id: 2, img: beveragesImage, title: 'Beverages' },
+        { id: 3, img: candiesImage, title: 'Candies' },
+        { id: 4, img: cheeseImage, title: 'Cheese' },
+        { id: 5, img: fishAndChipsImage, title: 'Fish & Chips' },
     ]
 
     return (
         <div className="Home">
-            <Search/>
+            <Search />
             {isWeekEnd ? (
                 <div>
                     <img src={produceImage} />
@@ -50,7 +53,7 @@ function Home(): JSX.Element {
                     <span key={d.id}>🤍 {d.name}, price:{d.price}</span>
                 ))}
             </div>
-<Products/>
+            <Products />
             {/* <div className="Products">
                 {products.map(p => (
                     <div key={p.id} className="Product">

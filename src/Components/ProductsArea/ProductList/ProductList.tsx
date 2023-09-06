@@ -1,10 +1,13 @@
+import { useEffect, useState } from 'react';
 import ProductModel from "../../../Models/ProductModel";
 import productsService from "../../../Services/ProductsService";
-import { useEffect, useState } from 'react';
-import "./ProductList.css";
+import useTitle from "../../../Utils/UseTitle";
 import ProductCard from "../ProductCard/ProductCard";
+import "./ProductList.css";
 
 function ProductList(): JSX.Element {
+    useTitle('Products');
+
     const [allProducts, setAllProducts] = useState<ProductModel[]>([]);
 
     useEffect(() => {
@@ -16,7 +19,7 @@ function ProductList(): JSX.Element {
     return (
         <div className="ProductList">
             {allProducts.map(product => (
-                <ProductCard key={product.id} product={product}/>
+                <ProductCard key={product.id} product={product} />
             ))}
         </div>
     );

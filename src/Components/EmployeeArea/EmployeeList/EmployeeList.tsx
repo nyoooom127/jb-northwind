@@ -1,9 +1,12 @@
+import { useEffect, useState } from 'react';
 import EmployeeModel from "../../../Models/EmployeeModel";
-import { useState, useEffect } from 'react';
-import "./EmployeeList.css";
 import employeesService from "../../../Services/EmployeesService";
+import useTitle from "../../../Utils/UseTitle";
+import "./EmployeeList.css";
 
 function EmployeeList(): JSX.Element {
+    useTitle('Employees');
+
     const fields = [
         "Image",
         "FirstName",
