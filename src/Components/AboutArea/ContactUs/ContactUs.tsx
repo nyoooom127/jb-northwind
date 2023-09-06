@@ -6,7 +6,7 @@ function ContactUs(): JSX.Element {
 
     return (
         <div className="ContactUs">
-            nope... We're on a coffee break
+            <p>nope... We're on a coffee break</p>
         </div>
     );
 }
