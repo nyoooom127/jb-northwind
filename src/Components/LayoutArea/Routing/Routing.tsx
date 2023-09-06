@@ -9,6 +9,7 @@ import EmployeeList from "../../EmployeeArea/EmployeeList/EmployeeList";
 import ProductDetails from "../../ProductsArea/ProductDetails/ProductDetails";
 import Spinner from "../../SharedArea/Spinner/Spinner";
 import Page404 from "../Page404/Page404";
+import AddProduct from '../../ProductsArea/AddProduct/AddProduct';
 
 function Routing(): JSX.Element {
 
@@ -29,6 +30,7 @@ function Routing(): JSX.Element {
             <Routes>
                 <Route path="/home" element={<Home />} />
                 <Route path="/products" element={<ProductList />} />
+                <Route path="/products/new" element={<AddProduct />} />
                 <Route path="/products/details/:id" element={<ProductDetails />} />
                 <Route path="/employees" element={<EmployeeList />} />
                 {/* <Route path="/about" element={<About />} /> */}

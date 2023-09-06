@@ -21,7 +21,6 @@ function EmployeeList(): JSX.Element {
 
     useEffect(() => {
         employeesService.getAllEmployees().then(employees => {
-            console.log(employees);
             setAllEmployees(employees);
         }).catch(err => alert(err.message))
     }, [])

@@ -12,7 +12,6 @@ function ProductList(): JSX.Element {
 
     useEffect(() => {
         productsService.getAllProducts().then(products => {
-            console.log(products);
             setAllProducts(products);
         }).catch(err => alert(err.message))
     }, [])
