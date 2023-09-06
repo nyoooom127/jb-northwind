@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import WhoAreWe from "../WhoAreWe/WhoAreWe";
 import "./About.css";
 import RandomImage from '../RandomImage/RandomImage';
+import Tune from '../Tune/Tune';
 
 function About(): JSX.Element {
     const [currDate, setCurrDate] = useState("");
@@ -84,7 +85,9 @@ function About(): JSX.Element {
 
             <span>{clock}</span>
 
-            <RandomImage/>
+            <Tune />
+
+            <RandomImage />
         </div>
     );
 }
