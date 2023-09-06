@@ -50,7 +50,10 @@ function ProductDetails(): JSX.Element {
             <br />
             <NavLink to="/products">Back</NavLink>
             <span> | </span>
+            <NavLink to={`/products/edit/${product?.id}`} >Edit</NavLink>
+            <span> | </span>
             <NavLink to="#" onClick={deleteMe}>Delete</NavLink>
+
         </div>
     );
 }

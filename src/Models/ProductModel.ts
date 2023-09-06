@@ -11,7 +11,7 @@ class ProductModel {
     public static nameValidation: RegisterOptions<ProductModel, "name"> = {
         required: { value: true, message: "Missing name." },
         minLength: { value: 2, message: "Name too short" },
-        maxLength: { value: 20, message: "Name too long" }
+        maxLength: { value: 30, message: "Name too long" }
     };
 
     public static priceValidation: RegisterOptions<ProductModel, "price"> = {

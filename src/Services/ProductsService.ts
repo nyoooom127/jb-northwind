@@ -22,9 +22,17 @@ class ProductsService {
         const response = await axios.post<ProductModel>(appConfig.productsUrl, product, options);
         const addedProduct = response.data;
     }
-
+    
     public async deleteProduct(id: number): Promise<void> {
         await axios.delete(appConfig.productsUrl + id);
+    }
+    
+    public async updateProduct(product: ProductModel): Promise<void> {
+        const options = {
+            headers: {"content-type": "multipart/form-data"}
+        }
+        const response = await axios.put<ProductModel>(appConfig.productsUrl + product.id, product, options);
+        const updatedProduct = response.data;
     }
 }
 
