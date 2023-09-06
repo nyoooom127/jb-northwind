@@ -14,6 +14,16 @@ function ProductDetails(): JSX.Element {
         productsService.getProduct(id)
             .then(p => setProduct(p))
             .catch(err => alert(err.message));
+        // IIFE:
+        // (async () => {
+        //     try {
+        //         const id = +params.id;
+        //         const product = await productsService.getProduct(id);
+        //         setProduct(product);
+        //     } catch (err: any) {
+        //         alert(err.message);
+        //     }
+        // })();
     }, []);
 
     return (
@@ -22,7 +32,7 @@ function ProductDetails(): JSX.Element {
             <h3>Price: {product?.price}</h3>
             <h3>Stock: {product?.stock}</h3>
             <img src={product?.imageUrl} />
-            <br/>
+            <br />
             <NavLink to="/products">Back</NavLink>
         </div>
     );
