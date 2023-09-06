@@ -5,6 +5,7 @@ import RandomImage from '../RandomImage/RandomImage';
 import Tune from '../Tune/Tune';
 import WhoAreWe from "../WhoAreWe/WhoAreWe";
 import "./About.css";
+import Greeting from '../../SharedArea/Greeting/Greeting';
 
 function About(): JSX.Element {
     useTitle('About');
@@ -63,6 +64,7 @@ function About(): JSX.Element {
 
     return (
         <div className="About">
+            <Greeting hour={new Date().getHours()}/>
             <WhoAreWe />
 
             <hr />
@@ -88,9 +90,9 @@ function About(): JSX.Element {
 
             <span>{clock}</span>
 
-            <Tune />
-
             <RandomImage />
+
+            <Tune />
         </div>
     );
 }

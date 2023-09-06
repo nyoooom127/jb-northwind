@@ -24,7 +24,7 @@ function RandomImage(): JSX.Element {
     useEffect(() => {
         const interval = window.setInterval(() => {
             setImage(products[getRndNum()]);
-            console.log(image);
+            // console.log(image);
         }, 3000);
 
         return () => window.clearInterval(interval);
