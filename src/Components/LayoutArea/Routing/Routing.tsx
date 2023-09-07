@@ -13,6 +13,7 @@ import AddProduct from '../../ProductsArea/AddProduct/AddProduct';
 import EditProduct from '../../ProductsArea/EditProduct/EditProduct';
 import Register from '../../AuthArea/Register/Register';
 import Login from '../../LoginArea/Login/Login';
+import Top3 from '../../ProductsArea/Top3/Top3';
 
 function Routing(): JSX.Element {
 
@@ -38,6 +39,7 @@ function Routing(): JSX.Element {
                 <Route path="/products/new" element={<AddProduct />} />
                 <Route path="/products/details/:id" element={<ProductDetails />} />
                 <Route path="/products/edit/:id" element={<EditProduct />} />
+                <Route path="/products/top3" element={<Top3 />} />
                 <Route path="/employees" element={<EmployeeList />} />
                 {/* <Route path="/about" element={<About />} /> */}
                 <Route path="/about" element={
