@@ -25,10 +25,12 @@ function Login(): JSX.Element {
                 <h2>Login</h2>
 
                 <label>Email: </label>
-                <input type="text" {...register("email")} />
+                <input type="text" {...register("email", CredentialsModel.emailValidation)} />
+                <span className="err">{formState.errors?.email?.message}</span>
 
                 <label>Password: </label>
-                <input type="text" {...register("password")} />
+                <input type="text" {...register("password", CredentialsModel.passwordValidation)} />
+                <span className="err">{formState.errors?.password?.message}</span>
 
                 <button>Login</button>
             </form>

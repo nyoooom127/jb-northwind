@@ -11,7 +11,7 @@ function Top3(): JSX.Element {
         productsService.getTop3Products()
             .then(products => {setProducts(products)})
             .catch(err => alert(err.message));
-    }, [])
+    }, []);
 
     return (
         <div className="Top3">
