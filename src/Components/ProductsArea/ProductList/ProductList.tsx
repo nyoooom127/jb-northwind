@@ -4,6 +4,7 @@ import productsService from "../../../Services/ProductsService";
 import useTitle from "../../../Utils/UseTitle";
 import ProductCard from "../ProductCard/ProductCard";
 import "./ProductList.css";
+import Spinner from '../../SharedArea/Spinner/Spinner';
 
 function ProductList(): JSX.Element {
     useTitle('Products');
@@ -17,9 +18,11 @@ function ProductList(): JSX.Element {
     }, [])
     return (
         <div className="ProductList">
-            {allProducts.map(product => (
-                <ProductCard key={product.id} product={product} />
-            ))}
+            {allProducts.length === 0
+                ? <Spinner />
+                : allProducts.map(product => (
+                    <ProductCard key={product.id} product={product} />
+                ))}
         </div>
     );
 }
