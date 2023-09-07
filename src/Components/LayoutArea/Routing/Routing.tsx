@@ -11,6 +11,8 @@ import Spinner from "../../SharedArea/Spinner/Spinner";
 import Page404 from "../Page404/Page404";
 import AddProduct from '../../ProductsArea/AddProduct/AddProduct';
 import EditProduct from '../../ProductsArea/EditProduct/EditProduct';
+import Register from '../../AuthArea/Register/Register';
+import Login from '../../LoginArea/Login/Login';
 
 function Routing(): JSX.Element {
 
@@ -29,6 +31,8 @@ function Routing(): JSX.Element {
     return (
         <div className="Routing">
             <Routes>
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/products" element={<ProductList />} />
                 <Route path="/products/new" element={<AddProduct />} />
