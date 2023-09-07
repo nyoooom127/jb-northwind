@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { AppState } from "../../../Redux/AppState";
 import TotalProducts from "../../ProductsArea/TotalProducts/TotalProducts";
 import "./Menu.css";
+import TotalEmployees from "../../EmployeeArea/TotalEmployees/TotalEmployees";
 
 function Menu(): JSX.Element {
     const user = useSelector((appState: AppState) => appState.user);
@@ -22,6 +23,7 @@ function Menu(): JSX.Element {
             <NavLink to="/about">About</NavLink>
             <NavLink to="/contactUs">Contact Us</NavLink>
             <TotalProducts />
+            <TotalEmployees />
         </div>
     );
 }

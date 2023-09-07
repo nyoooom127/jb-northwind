@@ -3,6 +3,8 @@ import EmployeeModel from "../../../Models/EmployeeModel";
 import employeesService from "../../../Services/EmployeesService";
 import useTitle from "../../../Utils/UseTitle";
 import "./EmployeeList.css";
+import { useSelector } from 'react-redux';
+import { AppState } from '../../../Redux/AppState';
 
 function EmployeeList(): JSX.Element {
     useTitle('Employees');
@@ -16,14 +18,13 @@ function EmployeeList(): JSX.Element {
         "City",
         "BirthDate",
     ];
-
-    const [allEmployees, setAllEmployees] = useState<EmployeeModel[]>([]);
+    
+    const allEmployees = useSelector((appState: AppState) => appState.employees);
 
     useEffect(() => {
-        employeesService.getAllEmployees().then(employees => {
-            setAllEmployees(employees);
-        }).catch(err => alert(err.message))
-    }, [])
+        employeesService.getAllEmployees().catch(err => alert(err.message))
+    }, []);
+
     return (
         <table className="EmployeeList">
             <thead>
