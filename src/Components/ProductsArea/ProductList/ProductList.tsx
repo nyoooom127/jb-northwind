@@ -5,19 +5,24 @@ import useTitle from "../../../Utils/UseTitle";
 import ProductCard from "../ProductCard/ProductCard";
 import "./ProductList.css";
 import Spinner from '../../SharedArea/Spinner/Spinner';
+import { useSelector } from 'react-redux';
+import { AppState } from '../../../Redux/AppState';
+import TotalProducts from '../TotalProducts/TotalProducts';
 
 function ProductList(): JSX.Element {
     useTitle('Products');
 
-    const [allProducts, setAllProducts] = useState<ProductModel[]>([]);
+    const allProducts = useSelector((appState: AppState) => appState.products);
+
+    // const [allProducts, setAllProducts] = useState<ProductModel[]>([]);
 
     useEffect(() => {
-        productsService.getAllProducts().then(products => {
-            setAllProducts(products);
-        }).catch(err => alert(err.message))
+        productsService.getAllProducts().catch(err => alert(err.message))
     }, [])
+
     return (
         <div className="ProductList">
+            <TotalProducts/>
             {allProducts.length === 0
                 ? <Spinner />
                 : allProducts.map(product => (
