@@ -11,11 +11,11 @@ class Notification {
         this.notify.success(message);
     }
 
-    public error(message: string): void {
-        this.notify.error(message);
+    public error(error: any): void {
+        this.notify.error(this.extractMessage(error));
     }
 
-    private extractMEssage(error: any): string {
+    private extractMessage(error: any): string {
         if (typeof error === "string") return error; // If regular string
 
         if (typeof error.response?.data === "string") return error.response.data; // If axios exception

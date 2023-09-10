@@ -1,11 +1,12 @@
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import Layout from './Components/LayoutArea/Layout/Layout';
+import { appStore } from './Redux/AppState';
+import { ThemeContext, appTheme } from './Utils/Context';
+import interceptors from './Utils/Interceptors';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { appStore } from './Redux/AppState';
-import interceptors from './Utils/Interceptors';
 
 //Create Interceptors once
 interceptors.create();
@@ -15,9 +16,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <BrowserRouter>
-    <Provider store={appStore}>
-        <Layout />
-    </Provider>
+        <Provider store={appStore}>
+            <ThemeContext.Provider value={appTheme}>
+                <Layout />
+            </ThemeContext.Provider>
+        </Provider>
     </BrowserRouter>
 );
 
