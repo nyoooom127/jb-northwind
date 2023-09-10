@@ -1,6 +1,6 @@
 import { Component } from "react";
-import "./Clock.css";
 import notification from "../../../Utils/Notification";
+import "./Clock.css";
 
 interface ClockProps {
     format: "24h" | "12h";
