@@ -6,6 +6,7 @@ import fruitsImage from '../../../Assets/Images/fruits.jpg';
 import produceImage from '../../../Assets/Images/produce.png';
 import snacksImage from '../../../Assets/Images/snacks.jpg';
 import useTitle from "../../../Utils/UseTitle";
+import Clock from '../../SharedArea/Clock/Clock';
 import Orders from '../../SharedArea/Orders/Orders';
 import Products from "../Products/Products";
 import Search from "../Search/Search";
@@ -37,6 +38,7 @@ function Home(): JSX.Element {
 
     return (
         <div className="Home">
+            <Clock format='12h'/>
             <Search />
             {isWeekEnd ? (
                 <div>
