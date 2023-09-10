@@ -12,7 +12,7 @@ import Page404 from "../Page404/Page404";
 import AddProduct from '../../ProductsArea/AddProduct/AddProduct';
 import EditProduct from '../../ProductsArea/EditProduct/EditProduct';
 import Register from '../../AuthArea/Register/Register';
-import Login from '../../LoginArea/Login/Login';
+import Login from '../../AuthArea/Login/Login';
 import Top3 from '../../ProductsArea/Top3/Top3';
 import OutOfStock from '../../ProductsArea/OutOfStock/OutOfStock';
 

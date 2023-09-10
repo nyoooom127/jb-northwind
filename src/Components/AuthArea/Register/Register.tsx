@@ -3,6 +3,7 @@ import "./Register.css";
 import UserModel from "../../../Models/UserModel";
 import authService from "../../../Services/AuthService";
 import { useNavigate } from "react-router-dom";
+import notification from "../../../Utils/Notification";
 
 function Register(): JSX.Element {
 const {register, handleSubmit, formState} = useForm<UserModel>();
@@ -11,10 +12,10 @@ const navigate = useNavigate();
 async function send(user:UserModel) {
     try{
         await authService.register(user);
-        alert("Welcome!");
+        notification.success("Welcome!");
         navigate("/home")
     }catch(err: any){
-        alert(err.message);
+        notification.error(err);
     }
 }
 

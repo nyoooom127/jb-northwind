@@ -1,3 +1,4 @@
+import notification from "../../../Utils/Notification";
 import "./Search.css";
 import {useState, SyntheticEvent, ChangeEvent} from 'react';
 
@@ -10,7 +11,7 @@ function Search(): JSX.Element {
     }
 
     function searchItem():void {
-        alert(`Searching for: ${textToSearch}`);
+        notification.success(`Searching for: ${textToSearch}`);
         setTextToSearch("");
     }
 

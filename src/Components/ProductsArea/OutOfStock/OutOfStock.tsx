@@ -3,6 +3,7 @@ import ProductModel from "../../../Models/ProductModel";
 import productsService from "../../../Services/ProductsService";
 import ProductCard from "../ProductCard/ProductCard";
 import "./OutOfStock.css";
+import notification from '../../../Utils/Notification';
 
 function OutOfStock(): JSX.Element {
     const [products, setProducts] = useState<ProductModel[]>([]);
@@ -10,7 +11,7 @@ function OutOfStock(): JSX.Element {
     useEffect(() => {
         productsService.getOutOfStockProducts()
             .then(products => { setProducts(products) })
-            .catch(err => alert(err.message));
+            .catch(err => notification.error(err));
     }, []);
 
     return (

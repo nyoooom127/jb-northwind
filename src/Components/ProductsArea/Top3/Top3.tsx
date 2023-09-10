@@ -3,6 +3,7 @@ import productsService from "../../../Services/ProductsService";
 import "./Top3.css";
 import ProductModel from "../../../Models/ProductModel";
 import ProductCard from "../ProductCard/ProductCard";
+import notification from "../../../Utils/Notification";
 
 function Top3(): JSX.Element {
     const [products, setProducts] = useState<ProductModel[]>([]);
@@ -10,7 +11,7 @@ function Top3(): JSX.Element {
     useEffect(() => {
         productsService.getTop3Products()
             .then(products => {setProducts(products)})
-            .catch(err => alert(err.message));
+            .catch(err => notification.error(err));
     }, []);
 
     return (

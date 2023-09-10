@@ -5,6 +5,7 @@ import useTitle from "../../../Utils/UseTitle";
 import "./EmployeeList.css";
 import { useSelector } from 'react-redux';
 import { AppState } from '../../../Redux/AppState';
+import notification from '../../../Utils/Notification';
 
 function EmployeeList(): JSX.Element {
     useTitle('Employees');
@@ -22,7 +23,7 @@ function EmployeeList(): JSX.Element {
     const allEmployees = useSelector((appState: AppState) => appState.employees);
 
     useEffect(() => {
-        employeesService.getAllEmployees().catch(err => alert(err.message))
+        employeesService.getAllEmployees().catch(err => notification.error(err))
     }, []);
 
     return (

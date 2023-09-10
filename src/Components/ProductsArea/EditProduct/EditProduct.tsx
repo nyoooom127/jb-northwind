@@ -4,6 +4,7 @@ import ProductModel from "../../../Models/ProductModel";
 import productsService from "../../../Services/ProductsService";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
+import notification from "../../../Utils/Notification";
 
 function EditProduct(): JSX.Element {
     const { register, handleSubmit, formState, setValue } = useForm<ProductModel>();
@@ -21,17 +22,17 @@ function EditProduct(): JSX.Element {
                 setValue("id", product.id);
                 setValues(product);
             })
-            .catch(err => alert(err.message));
+            .catch(err => notification.error(err));
     }, [])
 
     async function send(product: ProductModel) {
         try {
             product.image = (product.image as unknown as FileList)[0];
             await productsService.updateProduct(product);
-            alert('Product has been updated');
+            notification.success('Product has been updated');
             navigate('/products');
         } catch (err: any) {
-            alert(err.message);
+            notification.error(err);
         }
     }
 

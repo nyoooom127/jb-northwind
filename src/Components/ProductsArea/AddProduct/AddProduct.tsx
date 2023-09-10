@@ -3,6 +3,7 @@ import ProductModel from "../../../Models/ProductModel";
 import "./AddProduct.css";
 import productsService from "../../../Services/ProductsService";
 import { useNavigate } from "react-router-dom";
+import notification from "../../../Utils/Notification";
 
 function AddProduct(): JSX.Element {
     const { register, handleSubmit, formState } = useForm<ProductModel>();
@@ -12,10 +13,10 @@ function AddProduct(): JSX.Element {
         try {
             product.image = (product.image as unknown as FileList)[0];
             await productsService.addProduct(product);
-            alert('Product has been added');
+            notification.success('Product has been added');
             navigate('/products');
         } catch (err: any) {
-            alert(err.message);
+            notification.error(err);
         }
     }
 

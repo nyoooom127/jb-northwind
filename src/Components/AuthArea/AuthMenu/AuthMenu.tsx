@@ -3,6 +3,7 @@ import "./AuthMenu.css";
 import { AppState } from "../../../Redux/AppState";
 import authService from "../../../Services/AuthService";
 import { NavLink } from "react-router-dom";
+import notification from "../../../Utils/Notification";
 
 function AuthMenu(): JSX.Element {
 
@@ -10,7 +11,7 @@ function AuthMenu(): JSX.Element {
 
     function logMeOut(): void {
         authService.logout();
-        alert("Bye bye");
+        notification.success("Bye bye");
     }
 
     return (

@@ -4,6 +4,7 @@ import "./ProductDetails.css";
 import ProductModel from "../../../Models/ProductModel";
 import productsService from "../../../Services/ProductsService";
 import { NavLink } from "react-router-dom";
+import notification from "../../../Utils/Notification";
 
 function ProductDetails(): JSX.Element {
     const params = useParams<{ id: string }>();
@@ -14,7 +15,7 @@ function ProductDetails(): JSX.Element {
         const id = +params.id;
         productsService.getProduct(id)
             .then(p => setProduct(p))
-            .catch(err => alert(err.message));
+            .catch(err => notification.error(err));
         // IIFE:
         // (async () => {
         //     try {
@@ -22,7 +23,7 @@ function ProductDetails(): JSX.Element {
         //         const product = await productsService.getProduct(id);
         //         setProduct(product);
         //     } catch (err: any) {
-        //         alert(err.message);
+        //         notification.error(err);
         //     }
         // })();
     }, []);
@@ -34,10 +35,10 @@ function ProductDetails(): JSX.Element {
 
             await productsService.deleteProduct(product.id);
 
-            alert('Product has been deleted');
+            notification.success('Product has been deleted');
             navigate('/products');
         } catch (err: any) {
-            alert(err.message);
+            notification.error(err);
         }
     }
 

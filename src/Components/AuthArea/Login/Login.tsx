@@ -4,6 +4,7 @@ import UserModel from "../../../Models/UserModel";
 import authService from "../../../Services/AuthService";
 import "./Login.css";
 import CredentialsModel from "../../../Models/CredentialsModel";
+import notification from "../../../Utils/Notification";
 
 function Login(): JSX.Element {
     const { register, handleSubmit, formState } = useForm<CredentialsModel>();
@@ -12,10 +13,10 @@ function Login(): JSX.Element {
     async function send(credentials: CredentialsModel) {
         try {
             await authService.login(credentials);
-            alert("Welcome Back!");
+            notification.success("Welcome Back!");
             navigate("/home")
         } catch (err: any) {
-            alert(err.message);
+            notification.error(err);
         }
     }
 

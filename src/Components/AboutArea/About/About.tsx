@@ -6,6 +6,7 @@ import Tune from '../Tune/Tune';
 import WhoAreWe from "../WhoAreWe/WhoAreWe";
 import "./About.css";
 import Greeting from '../../SharedArea/Greeting/Greeting';
+import notification from '../../../Utils/Notification';
 
 function About(): JSX.Element {
     useTitle('About');
@@ -25,7 +26,7 @@ function About(): JSX.Element {
     function showNow(args: SyntheticEvent): void {
         console.log((args.target as HTMLButtonElement).innerHTML);
         const now = new Date();
-        alert(now.toLocaleString())
+        notification.success(now.toLocaleString())
     }
 
     const navigate = useNavigate();
@@ -39,14 +40,14 @@ function About(): JSX.Element {
 
     function displayTopProduct(): void {
         setTopProduct(topProduct === empty ? "Ice Coffee" : empty);
-        // alert(topProduct);
+        // notification.success(topProduct);
     }
 
     const [topSeller, setTopSeller] = useState<string>(empty);
 
     function displayTopSeller(): void {
         setTopSeller(topSeller === empty ? "Coffee Time" : empty);
-        // alert(topProduct);
+        // notification.success(topProduct);
     }
 
     const [clock, setClock] = useState("");

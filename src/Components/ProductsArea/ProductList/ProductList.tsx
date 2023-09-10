@@ -8,6 +8,7 @@ import Spinner from '../../SharedArea/Spinner/Spinner';
 import { useSelector } from 'react-redux';
 import { AppState } from '../../../Redux/AppState';
 import TotalProducts from '../TotalProducts/TotalProducts';
+import notification from '../../../Utils/Notification';
 
 function ProductList(): JSX.Element {
     useTitle('Products');
@@ -17,7 +18,7 @@ function ProductList(): JSX.Element {
     // const [allProducts, setAllProducts] = useState<ProductModel[]>([]);
 
     useEffect(() => {
-        productsService.getAllProducts().catch(err => alert(err.message))
+        productsService.getAllProducts().catch(err => notification.error(err))
     }, [])
 
     return (
