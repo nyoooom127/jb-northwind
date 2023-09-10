@@ -5,6 +5,8 @@ import UserModel from "../Models/UserModel";
 import { authReducer } from "./AuthSlice";
 import EmployeeModel from "../Models/EmployeeModel";
 import { employeeReducer } from "./EmployeeSlice";
+import logActions from "./Middleware";
+import logger from "redux-logger";
 
 export type AppState = {
     products: ProductModel[];
@@ -17,5 +19,6 @@ export const appStore = configureStore<AppState>({
         products: productReducer,
         user: authReducer,
         employees: employeeReducer
-    }
+    },
+    middleware: [logger]
 })
